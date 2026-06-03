@@ -178,10 +178,10 @@ function BrandCard({ name, logo, category }) {
       {category && (
         <span style={{
           fontFamily: 'Tenor Sans, sans-serif',
-          fontSize: 'clamp(0.3rem, 0.7vw, 0.4rem)',
+          fontSize: 'clamp(0.4rem, 0.9vw, 0.5rem)',
           letterSpacing: '0.2em',
           textTransform: 'uppercase',
-          color: 'rgba(255,255,255,0.22)',
+          color: 'rgba(255,255,255,0.55)',
         }}>{category}</span>
       )}
     </div>

@@ -1,5 +1,4 @@
 import './globals.css'
-import SmokeyCursor from "../components/SmokeyCursor";
 
 export const metadata = {
   title: 'Swabhiman Ball — Creator, Storyteller & Influencer',
@@ -15,13 +14,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <SmokeyCursor
-          densityDissipation={3.5}
-          velocityDissipation={2}
-          splatRadius={0.25}
-          splatForce={7000}
-          curl={4}
-        />
         {children}
       </body>
     </html>

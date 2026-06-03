@@ -216,7 +216,7 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0, x: -10, y: -10 }} animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
               transition={{ delay: 0.5, duration: 0.8 }}
-              style={{ position: 'absolute', top: 20, left: 20, right: -14, bottom: -14, border: '1px solid rgba(201,168,76,0.2)', zIndex: -1, maxWidth: 434 }}
+              style={{ position: 'absolute', top: 20, left: 20, right: -14, bottom: -14, border: '1px solid rgba(201,168,76,0.2)', zIndex: -1, maxWidth: 434, display: 'none' }}
             />
 
             {/* Followers badge */}
@@ -224,9 +224,8 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.8, rotate: -6 }} animate={isInView ? { opacity: 1, scale: 1, rotate: -3 } : {}}
               transition={{ delay: 1, duration: 0.6, type: 'spring', stiffness: 200 }}
               whileHover={{ rotate: 0, scale: 1.05 }}
-              style={{ position: 'absolute', bottom: 30, right: -20, background: 'var(--gold)', padding: '0.6rem 1rem', boxShadow: '0 8px 32px rgba(0,0,0,0.4)', zIndex: 5 }}
-            >
-              <p style={{ fontFamily: 'Tenor Sans, sans-serif', fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--black)', whiteSpace: 'nowrap' }}>3.4L+ Followers</p>
+style={{ position: 'absolute', bottom: 16, right: 0, background: 'var(--gold)', padding: '0.5rem 0.85rem', boxShadow: '0 8px 32px rgba(0,0,0,0.4)', zIndex: 5 }}            >
+              <p style={{ fontFamily: 'Tenor Sans, sans-serif', fontSize: '0.55rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--black)', whiteSpace: 'nowrap' }}>3.4L+ Followers</p>
             </motion.div>
           </motion.div>
 
