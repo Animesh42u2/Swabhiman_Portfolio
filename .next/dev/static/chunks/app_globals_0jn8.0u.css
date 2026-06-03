@@ -1,0 +1,149 @@
+/* [project]/app/globals.css [app-client] (css) */
+*, :before, :after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: #0a0a0a;
+  --black-soft: #111;
+  --black-mid: #1a1a1a;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-dim: #8a6f30;
+  --cream: #f5efe0;
+  --cream-dim: #e8dcc8;
+  --white: #fafaf8;
+  --gray: #6b6b6b;
+  --gray-light: #2a2a2a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: DM Sans, sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--black);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dim);
+  border-radius: 2px;
+}
+
+.font-display {
+  font-family: Cormorant Garamond, serif;
+}
+
+.font-tenor {
+  font-family: Tenor Sans, sans-serif;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200%;
+  }
+
+  100% {
+    background-position: 200%;
+  }
+}
+
+@keyframes lineGrow {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.animate-fade-up {
+  animation: .8s forwards fadeUp;
+}
+
+.animate-fade-in {
+  animation: 1s forwards fadeIn;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, var(--gold-dim) 0%, var(--gold) 40%, var(--gold-light) 60%, var(--gold) 80%, var(--gold-dim) 100%);
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: 4s linear infinite shimmer;
+}
+
+.gold-border {
+  border: 1px solid var(--gold-dim);
+}
+
+.gold-border-top {
+  border-top: 1px solid var(--gold-dim);
+}
+
+.gold-border-bottom {
+  border-bottom: 1px solid var(--gold-dim);
+}
+
+.noise-bg {
+  position: relative;
+}
+
+.noise-bg:before {
+  content: "";
+  pointer-events: none;
+  z-index: 1;
+  opacity: .3;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  position: absolute;
+  inset: 0;
+}
+
+* {
+  cursor: none !important;
+}
+
+/*# sourceMappingURL=app_globals_0jn8.0u.css.map*/
