@@ -4,7 +4,7 @@
 
 __turbopack_context__.s([
     "default",
-    ()=>MagneticCursor
+    ()=>SmokeyCursor
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
@@ -12,8 +12,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var _s = __turbopack_context__.k.signature();
 "use client";
 ;
-function MagneticCursor() {
+function SmokeyCursor() {
     _s();
+    const [isTouch, setIsTouch] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     const dotRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const posRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])({
         x: -200,
@@ -21,7 +22,10 @@ function MagneticCursor() {
     });
     const rafRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "MagneticCursor.useEffect": ()=>{
+        "SmokeyCursor.useEffect": ()=>{
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            setIsTouch(isTouchDevice);
+            if (isTouchDevice) return; // mobile: do nothing, keep normal cursor
             const dot = dotRef.current;
             if (!dot) return;
             const TAIL = 28;
@@ -29,17 +33,13 @@ function MagneticCursor() {
             for(let i = 0; i < TAIL; i++){
                 const el = document.createElement("div");
                 const progress = i / TAIL;
-                const size = Math.max(2, 14 * (1 - progress)); // 14px → 2px
+                const size = Math.max(2, 14 * (1 - progress));
                 const opacity = 1 - progress * 0.9;
                 el.style.cssText = `
-        position: fixed;
-        top: 0; left: 0;
-        width: ${size}px;
-        height: ${size}px;
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 99997;
-        transform: translate(-50%, -50%);
+        position: fixed; top: 0; left: 0;
+        width: ${size}px; height: ${size}px;
+        border-radius: 50%; pointer-events: none;
+        z-index: 99997; transform: translate(-50%, -50%);
         will-change: left, top;
       `;
                 const r = Math.round(201 + (240 - 201) * (1 - progress));
@@ -55,23 +55,23 @@ function MagneticCursor() {
                 });
             }
             const onMove = {
-                "MagneticCursor.useEffect.onMove": (e)=>{
+                "SmokeyCursor.useEffect.onMove": (e)=>{
                     posRef.current = {
                         x: e.clientX,
                         y: e.clientY
                     };
                 }
-            }["MagneticCursor.useEffect.onMove"];
+            }["SmokeyCursor.useEffect.onMove"];
             const onDown = {
-                "MagneticCursor.useEffect.onDown": ()=>{
+                "SmokeyCursor.useEffect.onDown": ()=>{
                     dot.style.transform = "translate(-50%,-50%) scale(0.6)";
                 }
-            }["MagneticCursor.useEffect.onDown"];
+            }["SmokeyCursor.useEffect.onDown"];
             const onUp = {
-                "MagneticCursor.useEffect.onUp": ()=>{
+                "SmokeyCursor.useEffect.onUp": ()=>{
                     dot.style.transform = "translate(-50%,-50%) scale(1)";
                 }
-            }["MagneticCursor.useEffect.onUp"];
+            }["SmokeyCursor.useEffect.onUp"];
             window.addEventListener("mousemove", onMove);
             window.addEventListener("mousedown", onDown);
             window.addEventListener("mouseup", onUp);
@@ -94,25 +94,28 @@ function MagneticCursor() {
             }
             rafRef.current = requestAnimationFrame(tick);
             return ({
-                "MagneticCursor.useEffect": ()=>{
+                "SmokeyCursor.useEffect": ()=>{
                     cancelAnimationFrame(rafRef.current);
                     window.removeEventListener("mousemove", onMove);
                     window.removeEventListener("mousedown", onDown);
                     window.removeEventListener("mouseup", onUp);
                     segments.forEach({
-                        "MagneticCursor.useEffect": (s)=>s.el.remove()
-                    }["MagneticCursor.useEffect"]);
+                        "SmokeyCursor.useEffect": (s)=>s.el.remove()
+                    }["SmokeyCursor.useEffect"]);
                 }
-            })["MagneticCursor.useEffect"];
+            })["SmokeyCursor.useEffect"];
         }
-    }["MagneticCursor.useEffect"], []);
+    }["SmokeyCursor.useEffect"], []);
+    // Mobile: render nothing, browser shows normal cursor
+    if (isTouch) return null;
+    // Desktop: render animated cursor + hide default
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
                 children: `*, *::before, *::after { cursor: none !important; }`
             }, void 0, false, {
                 fileName: "[project]/components/SmokeyCursor.jsx",
-                lineNumber: 87,
+                lineNumber: 84,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -134,16 +137,16 @@ function MagneticCursor() {
                 }
             }, void 0, false, {
                 fileName: "[project]/components/SmokeyCursor.jsx",
-                lineNumber: 90,
+                lineNumber: 85,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true);
 }
-_s(MagneticCursor, "o8irCEwu/yjsp9PevJc0wWa0sH0=");
-_c = MagneticCursor;
+_s(SmokeyCursor, "RDBgnF3Zdpv3+GSH9xIAqVYt2+U=");
+_c = SmokeyCursor;
 var _c;
-__turbopack_context__.k.register(_c, "MagneticCursor");
+__turbopack_context__.k.register(_c, "SmokeyCursor");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

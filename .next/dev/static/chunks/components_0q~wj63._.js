@@ -1140,7 +1140,8 @@ function About() {
                                         bottom: -14,
                                         border: '1px solid rgba(201,168,76,0.2)',
                                         zIndex: -1,
-                                        maxWidth: 434
+                                        maxWidth: 434,
+                                        display: 'none'
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/components/About.jsx",
@@ -1170,18 +1171,18 @@ function About() {
                                     },
                                     style: {
                                         position: 'absolute',
-                                        bottom: 30,
-                                        right: -20,
+                                        bottom: 16,
+                                        right: 0,
                                         background: 'var(--gold)',
-                                        padding: '0.6rem 1rem',
+                                        padding: '0.5rem 0.85rem',
                                         boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
                                         zIndex: 5
                                     },
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         style: {
                                             fontFamily: 'Tenor Sans, sans-serif',
-                                            fontSize: '0.6rem',
-                                            letterSpacing: '0.2em',
+                                            fontSize: '0.55rem',
+                                            letterSpacing: '0.15em',
                                             textTransform: 'uppercase',
                                             color: 'var(--black)',
                                             whiteSpace: 'nowrap'
@@ -1189,7 +1190,7 @@ function About() {
                                         children: "3.4L+ Followers"
                                     }, void 0, false, {
                                         fileName: "[project]/components/About.jsx",
-                                        lineNumber: 229,
+                                        lineNumber: 228,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
@@ -1249,18 +1250,18 @@ function About() {
                                                 children: "Swabhiman"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/About.jsx",
-                                                lineNumber: 243,
+                                                lineNumber: 242,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/components/About.jsx",
-                                                lineNumber: 244,
+                                                lineNumber: 243,
                                                 columnNumber: 17
                                             }, this),
                                             "but you can call me ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/components/About.jsx",
-                                                lineNumber: 244,
+                                                lineNumber: 243,
                                                 columnNumber: 43
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].span, {
@@ -1277,18 +1278,18 @@ function About() {
                                                 children: "Mr. Swabhi"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/About.jsx",
-                                                lineNumber: 245,
+                                                lineNumber: 244,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/About.jsx",
-                                        lineNumber: 237,
+                                        lineNumber: 236,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/About.jsx",
-                                    lineNumber: 236,
+                                    lineNumber: 235,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1310,7 +1311,7 @@ function About() {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/components/About.jsx",
-                                    lineNumber: 252,
+                                    lineNumber: 251,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1325,12 +1326,12 @@ function About() {
                                         visible: vis1
                                     }, void 0, false, {
                                         fileName: "[project]/components/About.jsx",
-                                        lineNumber: 259,
+                                        lineNumber: 258,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/About.jsx",
-                                    lineNumber: 258,
+                                    lineNumber: 257,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1345,12 +1346,12 @@ function About() {
                                         visible: vis2
                                     }, void 0, false, {
                                         fileName: "[project]/components/About.jsx",
-                                        lineNumber: 263,
+                                        lineNumber: 262,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/About.jsx",
-                                    lineNumber: 262,
+                                    lineNumber: 261,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1397,7 +1398,7 @@ function About() {
                                                     children: label
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/About.jsx",
-                                                    lineNumber: 277,
+                                                    lineNumber: 276,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1408,18 +1409,18 @@ function About() {
                                                     children: value
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/About.jsx",
-                                                    lineNumber: 278,
+                                                    lineNumber: 277,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, label, true, {
                                             fileName: "[project]/components/About.jsx",
-                                            lineNumber: 272,
+                                            lineNumber: 271,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/components/About.jsx",
-                                    lineNumber: 266,
+                                    lineNumber: 265,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1464,18 +1465,18 @@ function About() {
                                         children: "Let's Collaborate ✦"
                                     }, void 0, false, {
                                         fileName: "[project]/components/About.jsx",
-                                        lineNumber: 288,
+                                        lineNumber: 287,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/About.jsx",
-                                    lineNumber: 283,
+                                    lineNumber: 282,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/About.jsx",
-                            lineNumber: 234,
+                            lineNumber: 233,
                             columnNumber: 11
                         }, this)
                     ]
@@ -2862,10 +2863,10 @@ function BrandCard({ name, logo, category }) {
             category && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                 style: {
                     fontFamily: 'Tenor Sans, sans-serif',
-                    fontSize: 'clamp(0.3rem, 0.7vw, 0.4rem)',
+                    fontSize: 'clamp(0.4rem, 0.9vw, 0.5rem)',
                     letterSpacing: '0.2em',
                     textTransform: 'uppercase',
-                    color: 'rgba(255,255,255,0.22)'
+                    color: 'rgba(255,255,255,0.55)'
                 },
                 children: category
             }, void 0, false, {

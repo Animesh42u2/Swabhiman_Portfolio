@@ -10,14 +10,15 @@ module.exports = mod;
 
 __turbopack_context__.s([
     "default",
-    ()=>MagneticCursor
+    ()=>SmokeyCursor
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 "use client";
 ;
 ;
-function MagneticCursor() {
+function SmokeyCursor() {
+    const [isTouch, setIsTouch] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
     const dotRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const posRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])({
         x: -200,
@@ -25,6 +26,9 @@ function MagneticCursor() {
     });
     const rafRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        setIsTouch(isTouchDevice);
+        if (isTouchDevice) return; // mobile: do nothing, keep normal cursor
         const dot = dotRef.current;
         if (!dot) return;
         const TAIL = 28;
@@ -32,17 +36,13 @@ function MagneticCursor() {
         for(let i = 0; i < TAIL; i++){
             const el = document.createElement("div");
             const progress = i / TAIL;
-            const size = Math.max(2, 14 * (1 - progress)); // 14px → 2px
+            const size = Math.max(2, 14 * (1 - progress));
             const opacity = 1 - progress * 0.9;
             el.style.cssText = `
-        position: fixed;
-        top: 0; left: 0;
-        width: ${size}px;
-        height: ${size}px;
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 99997;
-        transform: translate(-50%, -50%);
+        position: fixed; top: 0; left: 0;
+        width: ${size}px; height: ${size}px;
+        border-radius: 50%; pointer-events: none;
+        z-index: 99997; transform: translate(-50%, -50%);
         will-change: left, top;
       `;
             const r = Math.round(201 + (240 - 201) * (1 - progress));
@@ -98,13 +98,16 @@ function MagneticCursor() {
             segments.forEach((s)=>s.el.remove());
         };
     }, []);
+    // Mobile: render nothing, browser shows normal cursor
+    if (isTouch) return null;
+    // Desktop: render animated cursor + hide default
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
                 children: `*, *::before, *::after { cursor: none !important; }`
             }, void 0, false, {
                 fileName: "[project]/components/SmokeyCursor.jsx",
-                lineNumber: 87,
+                lineNumber: 84,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -126,7 +129,7 @@ function MagneticCursor() {
                 }
             }, void 0, false, {
                 fileName: "[project]/components/SmokeyCursor.jsx",
-                lineNumber: 90,
+                lineNumber: 85,
                 columnNumber: 7
             }, this)
         ]
